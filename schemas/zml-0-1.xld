@@ -1,133 +1,131 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 
 <xs:element name="zone">
-	<xs:complexType>
-		<xs:attribute name="level" type="xs:integer" use="required"/> <!-- FNFT level -->
-		<xs:attribute name="parent" type="xs:string" use="required"/> <!-- hyperlink to parent file -->
-		<xs:attribute name="index" type="xs:string" use="optional"/> <!-- a ulex index which contains the governing legal ruleset -->
-		
-		<xs:sequence>
-		<xs:element name="ttl" type="xs:integer"/> <!-- time to live- how often the deed file is updated with reference to blockchain record. -->
+<xs:complexType>
+<xs:attribute name="level" type="xs:integer" use="required"/> <!-- FNFT level -->
+<xs:attribute name="parent" type="xs:string" use="required"/> <!-- hyperlink to parent file -->
+<xs:attribute name="index" type="xs:string" use="optional"/> <!-- a ulex index which contains the governing legal ruleset -->
 
-		<xs:element name="deed">
-			<xs:complexType>
-				<xs:attribute name="type" type="xs:string" use="optional"/>
+<xs:sequence>
+<xs:element name="ttl" type="xs:integer"/> <!-- time to live- how often the deed file is updated with reference to blockchain record. -->
 
-				<xs:sequence>
-				<xs:element name ="ownership">
-					<xs:complexType>
+<xs:element name="deed">
+<xs:complexType>
+<xs:attribute name="type" type="xs:string" use="optional"/>
+<xs:sequence>
+<xs:element name ="ownership">
+<xs:complexType>
+<xs:element name="title">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" type="xs:string">
+<xs:complexType>
+<xs:attribute name="protocol" type="xs:string" use="required" />
+</xs:complexType>
+</xs:element>
 
-						<xs:element name="title">
-							<xs:complexType>
-								
-								<xs:sequence>
-									<xs:element name="key" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="protocol" type="xs:string" use="required" />
-										</xs:complexType>
-									</xs:element>
+<xs:element name="weight" type="xs:string">
+<xs:complexType>
+<xs:attribute name="total" type="xs:integer" use="required" />
+</xs:complexType>
+</xs:element>
 
-									<xs:element name="weight" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="total" type="xs:integer" use="required" />
-										</xs:complexType>
-									</xs:element>
+<xs:element name="identity" type="xs:string">
+<xs:complexType>
+<xs:attribute name="protocol" type="xs:string" use="required" />
+</xs:complexType>
+</xs:element>
+</xs:sequence>
 
-									<xs:element name="identity" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="protocol" type="xs:string" use="required" />
-										</xs:complexType>
-									</xs:element>
-								</xs:sequence>
+</xs:complexType>
+</xs:element>
 
-							</xs:complexType>
-						</xs:element>
+<xs:element name="quote">
+<xs:complexType>
 
-						<xs:element name="quote">
-							<xs:complexType>
+<xs:sequence>
+<xs:element name="key" type="xs:string">
+<xs:complexType>
+<xs:attribute name="protocol" type="xs:string" use="required" />
+</xs:complexType>
+</xs:element>
 
-								<xs:sequence>
-									<xs:element name="key" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="protocol" type="xs:string" use="required" />
-										</xs:complexType>
-									</xs:element>
+<xs:element name="weight" type="xs:string">
+<xs:complexType>
+<xs:attribute name="total" type="xs:integer" use="required" />
+</xs:complexType>
+</xs:element>
 
-									<xs:element name="weight" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="total" type="xs:integer" use="required" />
-										</xs:complexType>
-									</xs:element>
+<xs:element name="identity" type="xs:string">
+<xs:complexType>
+<xs:attribute name="protocol" type="xs:string" use="required" />
+</xs:complexType>
+</xs:element>
+</xs:sequence>
 
-									<xs:element name="identity" type="xs:string">
-										<xs:complexType>
-											<xs:attribute name="protocol" type="xs:string" use="required" />
-										</xs:complexType>
-									</xs:element>
-								</xs:sequence>
+</xs:complexType>
+</xs:element>
 
-							</xs:complexType>
-						</xs:element>
-
-					</xs:complexType>
-				</xs:element>
+</xs:complexType>
+</xs:element>
 
 
-				<xs:element name ="dimensions">
-					<xs:complexType>
+<xs:element name ="dimensions">
+<xs:complexType>
 
-						<xs:element name="name" type="xs:string"/>
+<xs:element name="name" type="xs:string"/>
 
-						<xs:element name="description" type="xs:string"/>
+<xs:element name="description" type="xs:string"/>
 
-						<xs:element name="boundaries">
-							<xs:complexType>
-								<xs:attribute name="protocol" type="xs:string" />
+<xs:element name="boundaries">
+<xs:complexType>
+<xs:attribute name="protocol" type="xs:string" />
 
-								<xs:element name="map">
-									<xs:complexType>
-										<xs:attribute name="type" type="xs:string" />
-									</xs:complexType>
-								</xs:element>
+<xs:element name="map">
+<xs:complexType>
+<xs:attribute name="type" type="xs:string" />
+</xs:complexType>
+</xs:element>
 
-								<xs:element name="point">
-									<xs:complexType>
-										<xs:sequence>
-											<xs:element name="number" type="xs:integer" />
-											<xs:element name="coordinates" type="xs:string" />
-										</xs:sequence>
-									</xs:complexType>
-								</xs:element>
+<xs:element name="point">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="number" type="xs:integer" />
+<xs:element name="coordinates" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
 
-							</xs:complexType>
-						</xs:element>
+</xs:complexType>
+</xs:element>
 
-					</xs:complexType>
-				</xs:element>
+</xs:complexType>
+</xs:element>
 
-				<xs:element name ="history">
-					<xs:complexType>
+<xs:element name ="history">
+<xs:complexType>
 
-						<xs:element name="record">
-							<xs:complexType>
-								<xs:element name="digest" type="xs:string"/>
-								<xs:element name="timestamp" type="xs:integer"/>
-							</xs:complexType>
-						</xs:element>
+<xs:element name="record">
+<xs:complexType>
+<xs:element name="digest" type="xs:string"/>
+<xs:element name="timestamp" type="xs:integer"/>
+</xs:complexType>
+</xs:element>
 
 
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
 
-			</xs:complexType>
-		</xs:element>
-	</xs:sequence>
-		
+</xs:complexType>
+</xs:element>
+</xs:sequence>
 
-	</xs:complexType>
-	</xs:element>
+
+</xs:complexType>
+</xs:element>
 
 </xs:schema>
