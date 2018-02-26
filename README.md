@@ -6,7 +6,7 @@ Every piece of property contained within the Zone Protocol is represented as an 
 
 ## ZML Schema Tree
 
-![zml-0-1 tree](https://github.com/Nuhanse/ZML/tree/master/assets/zml-0-1-tree.png)
+![Schema Tree](/assets/zml-0-1-tree.png)
 
 
 
